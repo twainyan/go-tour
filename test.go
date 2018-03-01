@@ -2,18 +2,19 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-type Vertex struct {
-	X, Y float64
+type Person struct {
+	Name string
+	Age  int
 }
 
-func (v Vertex) Abs() float64 {
-	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+func (p Person) String() string {
+	return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
 }
 
 func main() {
-	v := Vertex{3, 4}
-	fmt.Println(v.Abs())
+	a := Person{"Arthur Dent", 42}
+	z := Person{"Zaphod Beeblebrox", 9001}
+	fmt.Println(a, z)
 }
